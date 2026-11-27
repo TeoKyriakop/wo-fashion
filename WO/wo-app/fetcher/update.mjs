@@ -13,12 +13,12 @@ import { mkdir, readFile, writeFile, rm } from "node:fs/promises";
 import { join } from "node:path";
 import { FEEDS } from "./feeds.js";
 import { classify } from "./topics.js";
-import { parseFeed, decode } from "./parse.js";
+import { parseFeed, decode, pageSummary } from "./parse.js";
 
 const KEEP_DAYS = 180;      // ημέρες αρχείου
 const SEEN_LIMIT = 8000;    // μνήμη συνδέσμων για να μη διπλο-εμφανίζονται άρθρα
-const SEARCH_LIMIT = 2500;  // πόσα πρόσφατα άρθρα μπαίνουν στην αναζήτηση
-const OG_IMAGE_LIMIT = 40;  // πόσες σελίδες ανοίγει ανά ανανέωση για να βρει εικόνα
+const SEARCH_LIMIT = 3000;  // πόσα πρόσφατα άρθρα μπαίνουν στην αναζήτηση
+const PAGE_LIMIT = 120;     // πόσες σελίδες άρθρων ανοίγει ανά ανανέωση (για εικόνα και περίληψη)
 const EXCERPT = 260;        // μήκος αποσπάσματος (χαρακτήρες)
 
 const out = process.argv[2] || "site";
@@ -51,9 +51,14 @@ async function main() {
   }
   fresh.sort((a, b) => b.date - a.date);
 
-  // Εικόνα από τη σελίδα του άρθρου όπου λείπει από το RSS
-  const noImage = fresh.filter((it) => !it.image).slice(0, OG_IMAGE_LIMIT);
-  await Promise.all(noImage.map(async (it) => (it.image = await fetchOgImage(it.link))));
+  // Όπου το RSS δεν έχει εικόνα ή αρκετό κείμενο για περίληψη, ανοίγουμε τη σελίδα του άρθρου
+  const needPage = fresh.filter((it) => !it.image || it.summary.length < 300).slice(0, PAGE_LIMIT);
+  await pool(needPage, 8, async (it) => {
+    const page = await fetchPage(it.link);
+    if (!page) return;
+    if (!it.image) it.image = page.image;
+    if (page.summary.length > it.summary.length) it.summary = page.summary;
+  });
 
   const reels = fresh.map((it) => ({
     id: it.id,
@@ -64,6 +69,8 @@ async function main() {
     image: it.image || null,
     title: it.title,
     excerpt: it.excerpt,
+    // η περίληψη αποθηκεύεται μόνο αν λέει κάτι παραπάνω από το απόσπασμα
+    summary: it.summary.length > it.excerpt.length + 40 ? it.summary : undefined,
     published: new Date(it.date).toISOString(),
   }));
 
@@ -107,18 +114,27 @@ async function fetchFeed(feed) {
   return parseFeed(await r.text(), feed, EXCERPT);
 }
 
-async function fetchOgImage(link) {
+// Σελίδα άρθρου -> { image, summary }
+async function fetchPage(link) {
   try {
-    const r = await fetchWithTimeout(link, 8000);
+    const r = await fetchWithTimeout(link, 10000);
     if (!r.ok) return null;
-    const html = (await r.text()).slice(0, 300000);
+    const html = (await r.text()).slice(0, 800000);
     const m =
       html.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i) ||
       html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i);
-    return m ? decode(m[1]) : null;
+    return { image: m ? decode(m[1]) : null, summary: pageSummary(html) };
   } catch {
     return null;
   }
+}
+
+// Εκτελεί τη δουλειά για όλα τα στοιχεία, το πολύ `n` ταυτόχρονα
+async function pool(list, n, fn) {
+  let i = 0;
+  await Promise.all(Array.from({ length: n }, async () => {
+    while (i < list.length) await fn(list[i++]);
+  }));
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });

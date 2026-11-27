@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Shape.gr</title>
+    <atom:link rel="self" href="https://www.shape.gr/newsfeed/rss/" type="application/rss+xml" />
+    <atom:link rel="hub" href="https://pubsubhubbub.appspot.com/" />
+    <description>Τελευταίες ειδήσεις από το Shape.gr</description>
+    <link>https://www.shape.gr</link>
+    <language>el</language>
+    <copyright>Copyright 2026, Shape.gr</copyright>
+    <webMaster>webmaster@capital.gr (Webmaster)</webMaster>
+    <lastBuildDate>Fri, 27 Nov 2026 16:00:07 +0200</lastBuildDate>
+    <ttl>5</ttl>
+    <docs>https://www.shape.gr/newsfeed/rss/</docs>
+    <image>
+      <title>Shape.gr</title>
+      <width>144</width>
+      <height>38</height>
+      <link>https://www.shape.gr</link>
+      <url>https://www.shape.gr/content/images/logos/feed-logo.png</url>
+    </image>
+    <item>
+      <title><![CDATA[Ενδυνάμωση κορμού: Οι 3 ασκήσεις που ξεχωρίζουν οι φυσικοθεραπευτές]]></title>
+      <guid>https://www.shape.gr/fitness/programmata-askiseon/1020967/endunamosi-kormou-oi-3-askiseis-pou-xexorizoun-oi-fusikotherapeutes/</guid>
+      <link>https://www.shape.gr/fitness/programmata-askiseon/1020967/endunamosi-kormou-oi-3-askiseis-pou-xexorizoun-oi-fusikotherapeutes/</link>
+      <pubDate>Fri, 27 Nov 2026 16:00:00 +0200</pubDate>
+      <description><![CDATA[Αυτές οι τρεις ασκήσεις σε βοηθούν να χτίσεις έναν πιο σταθερό κορμό, να βελτιώσεις τον έλεγχο των κινήσεών σου και να στηρίζεις καλύτερα το σώμα σου στην καθημερινότητα.]]></description>
+      <author>shape@atticamedia.gr</author>
+      <media:content url="https://www.shape.gr/Content/ImagesDatabase/fbc/1200x628/crop/both/4e/4e011a2bc8224cea94ed760e5edc4742.jpg" width="1200" height="628" type="image/jpeg" />
+    </item>
+    <item>
+      <title><![CDATA[Εγκεφαλικό: Οι 3 ώρες της ημέρας που ο κίνδυνος αυξάνεται κατά 72%]]></title>
+      <guid>https://www.shape.gr/ygeia/zise-ygieina/1021553/egkefaliko-oi-3-ores-tis-imeras-pou-o-kindunos-auxanetai-kata-72/</guid>
+      <link>https://www.shape.gr/ygeia/zise-ygieina/1021553/egkefaliko-oi-3-ores-tis-imeras-pou-o-kindunos-auxanetai-kata-72/</link>
+      <pubDate>Fri, 27 Nov 2026 14:00:00 +0200</pubDate>
+      <description><![CDATA[Οι φυσιολογικές αλλαγές στην αρτηριακή πίεση, στις ορμόνες και στη λειτουργία του αίματος εξηγούν γιατί αυτές οι ώρες της ημέρας συνδέονται με μεγαλύτερη συχνότητα εγκεφαλικών επεισοδίων.]]></description>
+      <author>shape@atticamedia.gr</author>
+      <media:content url="https://www.shape.gr/Content/ImagesDatabase/fbc/1200x628/crop/both/11/114003adae634490a98b177228b50c13.jpg" width="1200" height="628" type="image/jpeg" />
+    </item>
+    <item>
+      <title><![CDATA["Συνταγή για μια ανάλαφρη ζωή": Νέα πρωτοβουλία της Novo σε συνεργασία με τον Άκη Πετρετζίκη]]></title>
+      <guid>https://www.shape.gr/diatrofi-adynatisma/1021558/suntagi-gia-mia-analafri-zoi-nea-protoboulia-tis-novo-se-sunergasia-me-ton-aki-petretziki/</guid>
+      <link>https://www.shape.gr/diatrofi-adynatisma/1021558/suntagi-gia-mia-analafri-zoi-nea-protoboulia-tis-novo-se-sunergasia-me-ton-aki-petretziki/</link>
+      <pubDate>Fri, 27 Nov 2026 12:46:00 +0200</pubDate>
+      <description><![CDATA[Η Novo Ελλάδος και ο Άκης Πετρετζίκης ενώνουν τις δυνάμεις τους, καταρρίπτοντας διαδεδομένους διατροφικούς μύθους και προτείνοντας πρακτικές, ισορροπημένες διατροφικές λύσεις, σχεδιασμένες με την επιστημονική καθοδήγηση ιατρών και διατροφολόγων.]]></description>
+      <author>shape@atticamedia.gr</author>
+      <media:content url="https://www.shape.gr/Content/ImagesDatabase/fbc/1200x628/crop/both/ab/abfafa2126174bc08774d43dcb6becf8.jpg" width="1200" height="628" type="image/jpeg" />
+    </item>
+    <item>
+      <title><![CDATA[Χαλβάς με κακάο ή με αμύγδαλα; Ποια εκδοχή έχει μεγαλύτερη διατροφική αξία;]]></title>
+      <guid>https://www.shape.gr/diatrofi-adynatisma/sosti-diatrofi/1021257/xalbas-me-kakao-i-me-amugdala-poia-ekdoxi-exei-megaluteri-diatrofiki-axia/</guid>
+      <link>https://www.shape.gr/diatrofi-adynatisma/sosti-diatrofi/1021257/xalbas-me-kakao-i-me-amugdala-poia-ekdoxi-exei-megaluteri-diatrofiki-axia/</link>
+      <pubDate>Fri, 27 Nov 2026 12:30:00 +0200</pubDate>
+      <description><![CDATA[Μπορεί να έχουν την ίδια βάση, όμως το κακάο και τα αμύγδαλα δίνουν στον χαλβά διαφορετικά διατροφικά πλεονεκτήματα. Δες τι κερδίζεις με κάθε επιλογή.]]></description>
+      <author>shape@atticamedia.gr</author>
+      <media:content url="https://www.shape.gr/Content/ImagesDatabase/fbc/1200x628/crop/both/17/1797c2f3670e4954b844840a230815e4.jpg" width="1200" height="628" type="image/jpeg" />
+    </item>
+    <item>
+      <title><![CDATA[Christmas list: Τα beauty και fashion δώρα που ξεχωρίσαμε στα Hondos Center]]></title>
+      <guid>https://www.shape.gr/life/omorfia/1021557/christougenniatika-dora-hondos-center-18-idees/</guid>
+      <link>https://www.shape.gr/life/omorfia/1021557/christougenniatika-dora-hondos-center-18-idees/</link>
+      <pubDate>Fri, 27 Nov 2026 12:13:00 +0200</pubDate>
+      <description><![CDATA[Από αγαπημένα αρώματα και iconic κραγιόν μέχρι τσάντες και fashion pieces, ανακάλυψε τις επιλογές που θα κάνουν το φετινό Christmas shopping λίγο πιο ξεχωριστό.]]></description>
+      <author>shape@atticamedia.gr</author>
+      <media:content url="https://www.shape.gr/Content/ImagesDatabase/fbc/1200x628/crop/both/0a/0a12a8b709c347de8f7256c9a3373a50.jpg" width="1200" height="628" type="image/jpeg" />
+    </item>
+    <item>
+      <title><![CDATA[Αντί για μαγιονέζα στη ρώσικη σαλάτα: Τι να βάλεις για εξίσου κρεμώδη υφή]]></title>
+      <guid>https://www.shape.gr/diatrofi-adynatisma/sosti-diatrofi/1021536/anti-gia-magioneza-sti-rosiki-salata-ti-na-baleis-gia-exisou-kremodi-ufi/</guid>
+      <link>https://www.shape.gr/diatrofi-adynatisma/sosti-diatrofi/1021536/anti-gia-magioneza-sti-rosiki-salata-ti-na-baleis-gia-exisou-kremodi-ufi/</link>
+      <pubDate>Fri, 27 Nov 2026 11:00:00 +0200</pubDate>
+      <description><![CDATA[Η κλασική σαλάτα των γιορτών μπορεί να γίνει διαφορετική χωρίς να χάσει τη βελούδινη υφή της. Οι εναλλακτικές που αξίζει να δοκιμάσεις.]]></description>
+      <author>shape@atticamedia.gr</author>
+      <media:content url="https://www.shape.gr/Content/ImagesDatabase/fbc/1200x628/crop/both/c0/c02e80d913ef416bb5ceaf5d21eed7d8.jpg" width="1200" height="628" type="image/jpeg" />
+    </item>
+    <item>
+      <title><![CDATA[Cinnamon roll banana bread: Αφράτο κέικ μπανάνας με γέμιση κανέλας]]></title>
+      <guid>https://www.shape.gr/diatrofi-adynatisma/sosti-diatrofi/1021532/cinnamon-roll-banana-bread-afrato-keik-mpananas-me-gemisi-kanelas/</guid>
+      <link>https://www.shape.gr/diatrofi-adynatisma/sosti-diatrofi/1021532/cinnamon-roll-banana-bread-afrato-keik-mpananas-me-gemisi-kanelas/</link>
+      <pubDate>Fri, 27 Nov 2026 10:15:00 +0200</pubDate>
+      <description><![CDATA[Η κανέλα δεν περιορίζεται αυτή τη φορά σε μια πρέζα μέσα στη ζύμη, αλλά γίνεται η πρωταγωνίστρια ενός διαφορετικού banana bread.]]></description>
+      <author>shape@atticamedia.gr</author>
+      <media:content url="https://www.shape.gr/Content/ImagesDatabase/fbc/1200x628/crop/both/f0/f02611b07e1842c1bf74bd26aa4b4702.jpg" width="1200" height="628" type="image/jpeg" />
+    </item>
+    <item>
+      <title><![CDATA[Ζώδια σήμερα 27/11: Ημερήσιες προβλέψεις από την Α. Λεούση]]></title>
+      <guid>https://www.shape.gr/life/1021549/imerisio-oroskopio-27-noembriou-2026-apo-tin-anta-leousi/</guid>
+      <link>https://www.shape.gr/life/1021549/imerisio-oroskopio-27-noembriou-2026-apo-tin-anta-leousi/</link>
+      <pubDate>Fri, 27 Nov 2026 10:12:00 +0200</pubDate>
+      <description><![CDATA[Τα άστρα για σήμερα Παρασκευή 27 Νοεμβρίου 2026 και οι αστρολογικές τους προβλέψεις από την Άντα Λεούση]]></description>
+      <author>shape@atticamedia.gr</author>
+      <media:content url="https://www.shape.gr/Content/ImagesDatabase/fbc/1200x628/crop/both/d4/d44e28e2b2f742bfa433e36de08921a1.jpg" width="1200" height="628" type="image/jpeg" />
+    </item>
+    <item>
+      <title><![CDATA[Σουηδική μέθοδος οργάνωσης: Πώς θα ξεφορτωθείς όσα πιάνουν άσκοπα χώρο στο σπίτι]]></title>
+      <guid>https://www.shape.gr/life/1021234/souidiki-methodos-organosis-pos-tha-xefortotheis-osa-pianoun-askopa-xoro-sto-spiti/</guid>
+      <link>https://www.shape.gr/life/1021234/souidiki-methodos-organosis-pos-tha-xefortotheis-osa-pianoun-askopa-xoro-sto-spiti/</link>
+      <pubDate>Fri, 27 Nov 2026 09:30:00 +0200</pubDate>
+      <description><![CDATA[Μια ασυνήθιστη σκανδιναβική φιλοσοφία σε προσκαλεί να δεις διαφορετικά τα αντικείμενα που γεμίζουν το σπίτι σου και να κρατήσεις εκείνα που έχουν πραγματικά θέση στη ζωή σου.]]></description>
+      <author>shape@atticamedia.gr</author>
+      <media:content url="https://www.shape.gr/Content/ImagesDatabase/fbc/1200x628/crop/both/b9/b9ea3987d3b04e549d51c5f955df2bdb.jpg" width="1200" height="628" type="image/jpeg" />
+    </item>
+    <item>
+      <title><![CDATA[Μπορείς να τρως αυγά όταν παίρνεις αντιβίωση;]]></title>
+      <guid>https://www.shape.gr/ygeia/zise-ygieina/1021402/antibiosi-kai-auga/</guid>
+      <link>https://www.shape.gr/ygeia/zise-ygieina/1021402/antibiosi-kai-auga/</link>
+      <pubDate>Fri, 27 Nov 2026 08:45:00 +0200</pubDate>
+      <description><![CDATA[Τα αυγά είναι μια συνηθισμένη επιλογή στο καθημερινό τραπέζι, όμως όταν ακολουθείς αγωγή με αντιβίωση ίσως αναρωτιέσαι αν επηρεάζουν τη δράση του φαρμάκου. Τι ισχύει πραγματικά και τι χρειάζεται να προσέξεις στη διατροφή σου;]]></description>
+      <author>shape@atticamedia.gr</author>
+      <media:content url="https://www.shape.gr/Content/ImagesDatabase/fbc/1200x628/crop/both/60/60279525086c4734bc5f6cae11084483.jpg" width="1200" height="628" type="image/jpeg" />
+    </item>
+    <item>
+      <title><![CDATA[Πρωινό για αύξηση μυϊκής μάζας: 5 ιδέες πλούσιες σε πρωτεΐνη]]></title>
+      <guid>https://www.shape.gr/diatrofi-adynatisma/sosti-diatrofi/1021393/proino-gia-auxisi-muikis-mazas/</guid>
+      <link>https://www.shape.gr/diatrofi-adynatisma/sosti-diatrofi/1021393/proino-gia-auxisi-muikis-mazas/</link>
+      <pubDate>Fri, 27 Nov 2026 08:00:00 +0200</pubDate>
+      <description><![CDATA[Αν κάνεις προπόνηση με βάρη και θέλεις να δυναμώσεις, το πρώτο γεύμα της ημέρας μπορεί να γίνει σύμμαχός σου. Δες πώς να συνδυάσεις σωστά τις τροφές για να ξεκινήσεις με περισσότερη πρωτεΐνη.]]></description>
+      <author>shape@atticamedia.gr</author>
+      <media:content url="https://www.shape.gr/Content/ImagesDatabase/fbc/1200x628/crop/both/9b/9b0e068ff4a5492fb98b17f40a7381b4.jpg" width="1200" height="628" type="image/jpeg" />
+    </item>
+    <item>
+      <title><![CDATA[5 ενδείξεις ότι έχεις τραυματίσει τον επιδερμικό σου φραγμό και τι να κάνεις για να τον φροντίσεις]]></title>
+      <guid>https://www.shape.gr/life/omorfia/1021543/5-endeixeis-oti-exete-traumatisei-ton-epidermiko-sas-fragmo-kai-ti-na-kanete-gia-na-ton-frontisete/</guid>
+      <link>https://www.shape.gr/life/omorfia/1021543/5-endeixeis-oti-exete-traumatisei-ton-epidermiko-sas-fragmo-kai-ti-na-kanete-gia-na-ton-frontisete/</link>
+      <pubDate>Thu, 26 Nov 2026 21:30:00 +0200</pubDate>
+      <description><![CDATA[Όταν η επιδερμίδα σας ζητά απεγνωσμένα διάλειμμα από τα πολλά ενεργά συστατικά, μάθετε να αναγνωρίζετε τα σημάδια και να επαναφέρετε την ισορροπία, την άνεση και τη φυσική της υγεία.]]></description>
+      <author>shape@atticamedia.gr</author>
+      <media:content url="https://www.shape.gr/Content/ImagesDatabase/fbc/1200x628/crop/both/e7/e7d44c8813ba4db7bd09621003c8aedb.jpg" width="1200" height="628" type="image/jpeg" />
+    </item>
+    <item>
+      <title><![CDATA[6 σημάδια ότι ο τοκετός πλησιάζει - Τι αλλάζει στο σώμα σου]]></title>
+      <guid>https://www.shape.gr/ygeia/sto-gynaikologo/1021521/sumptomata-gennas/</guid>
+      <link>https://www.shape.gr/ygeia/sto-gynaikologo/1021521/sumptomata-gennas/</link>
+      <pubDate>Thu, 26 Nov 2026 20:00:00 +0200</pubDate>
+      <description><![CDATA[Δεν ξεκινούν όλα με το σπάσιμο των νερών. Οι αλλαγές που μπορεί να παρατηρήσεις τις τελευταίες ημέρες πριν από τον τοκετό.]]></description>
+      <author>shape@atticamedia.gr</author>
+      <media:content url="https://www.shape.gr/Content/ImagesDatabase/fbc/1200x628/crop/both/12/122179e697a046c3ba2ecbcd4fab2ea6.jpg" width="1200" height="628" type="image/jpeg" />
+    </item>
+    <item>
+      <title><![CDATA[Περιστοματικές ρυτίδες: 5 συμβουλές για να τις περιορίσεις]]></title>
+      <guid>https://www.shape.gr/life/omorfia/1021542/peristomatikes-rutides-5-sumboules-gia-na-tis-periorisete/</guid>
+      <link>https://www.shape.gr/life/omorfia/1021542/peristomatikes-rutides-5-sumboules-gia-na-tis-periorisete/</link>
+      <pubDate>Thu, 26 Nov 2026 18:30:00 +0200</pubDate>
+      <description><![CDATA[Οι λεπτές γραμμές γύρω από τα χείλη είναι από τα πρώτα σημάδια έκφρασης που εμφανίζονται στο πρόσωπό σας — ανακαλύψτε πώς με στοχευμένη φροντίδα, σωστές συνήθειες και έξυπνα συστατικά μπορείτε να διατηρήσετε την περιοχή λεία, ελαστική και νεανική.]]></description>
+      <author>shape@atticamedia.gr</author>
+      <media:content url="https://www.shape.gr/Content/ImagesDatabase/fbc/1200x628/crop/both/e2/e2511a12bf6b4a309f778540ce9840c2.jpg" width="1200" height="628" type="image/jpeg" />
+    </item>
+    <item>
+      <title><![CDATA[Πώς θα στολίσεις το χριστουγεννιάτικο δέντρο σε στιλ 60s: 5 tips για το απόλυτο ρετρό αποτέλεσμα]]></title>
+      <guid>https://www.shape.gr/life/1021539/xristougenniatiko-dentro-me-aera-60s-5-mustika-diakosmisis-gia-na-petuxeis-to-apoluto-retro-stil-sto-spiti/</guid>
+      <link>https://www.shape.gr/life/1021539/xristougenniatiko-dentro-me-aera-60s-5-mustika-diakosmisis-gia-na-petuxeis-to-apoluto-retro-stil-sto-spiti/</link>
+      <pubDate>Thu, 26 Nov 2026 17:00:00 +0200</pubDate>
+      <description><![CDATA[Από τις παστέλ αποχρώσεις μέχρι το τρενάκι που κάνει βόλτες γύρω από τον κορμό, δες πώς θα φέρεις τη νοσταλγική μαγεία των δεκαετιών του ’60 και του ’70 στο σαλόνι σου.]]></description>
+      <author>shape@atticamedia.gr</author>
+      <media:content url="https://www.shape.gr/Content/ImagesDatabase/fbc/1200x628/crop/both/ad/ada19553186d45058929eaca6cfc8de7.jpg" width="1200" height="628" type="image/jpeg" />
+    </item>
+    <item>
+      <title><![CDATA[Να γυμναστείς μετά από μια νύχτα κακού ύπνου ή να ξεκουραστείς;]]></title>
+      <guid>https://www.shape.gr/fitness/tips-askisis/1021493/gymnastiki-meta-apo-kako-ypno/</guid>
+      <link>https://www.shape.gr/fitness/tips-askisis/1021493/gymnastiki-meta-apo-kako-ypno/</link>
+      <pubDate>Thu, 26 Nov 2026 16:00:00 +0200</pubDate>
+      <description><![CDATA[Αν ξύπνησες κουρασμένη και αναρωτιέσαι αν πρέπει να πας για τρέξιμο ή γυμναστήριο, η απάντηση δεν είναι απαραίτητα να πιέσεις τον εαυτό σου. Δες τι συμβαίνει στο σώμα σου και πώς να προσαρμόσεις την προπόνησή σου.]]></description>
+      <author>shape@atticamedia.gr</author>
+      <media:content url="https://www.shape.gr/Content/ImagesDatabase/fbc/1200x628/crop/both/1a/1ac504c6f6ba4521ac7847442098e091.jpg" width="1200" height="628" type="image/jpeg" />
+    </item>
+    <item>
+      <title><![CDATA[Πώς "πέφτει" το σάκχαρο με περπάτημα – Η καλύτερη ώρα μέσα στην ημέρα]]></title>
+      <guid>https://www.shape.gr/ygeia/zise-ygieina/1021544/pos-peftei-to-sakxaro-me-perpatima-i-kaluteri-ora-mesa-stin-imera/</guid>
+      <link>https://www.shape.gr/ygeia/zise-ygieina/1021544/pos-peftei-to-sakxaro-me-perpatima-i-kaluteri-ora-mesa-stin-imera/</link>
+      <pubDate>Thu, 26 Nov 2026 14:00:00 +0200</pubDate>
+      <description><![CDATA[Πρωί ή βράδυ; Αν θέλεις να βοηθήσεις τον οργανισμό σου να διαχειρίζεται καλύτερα τα επίπεδα σακχάρου στο αίμα, ίσως έχει σημασία όχι μόνο πόσο περπατάς, αλλά και πότε επιλέγεις να βγεις για βόλτα.]]></description>
+      <author>shape@atticamedia.gr</author>
+      <media:content url="https://www.shape.gr/Content/ImagesDatabase/fbc/1200x628/crop/both/b8/b8004110d8274006b6be2ea135c66cfc.jpg" width="1200" height="628" type="image/jpeg" />
+    </item>
+    <item>
+      <title><![CDATA[Πίνεις πλήρες ή ελαφρύ; Ποιο γάλα προστατεύει καλύτερα τα οστά σου;]]></title>
+      <guid>https://www.shape.gr/diatrofi-adynatisma/sosti-diatrofi/1021541/pineis-plires-i-elafru-poio-gala-prostateuei-kalutera-ta-osta-sou/</guid>
+      <link>https://www.shape.gr/diatrofi-adynatisma/sosti-diatrofi/1021541/pineis-plires-i-elafru-poio-gala-prostateuei-kalutera-ta-osta-sou/</link>
+      <pubDate>Thu, 26 Nov 2026 12:30:00 +0200</pubDate>
+      <description><![CDATA[Πόσο διαφορετικά είναι τελικά τα δύο είδη γάλακτος και τι σημαίνει αυτό για τη διατροφή και την υγεία των οστών σου;]]></description>
+      <author>shape@atticamedia.gr</author>
+      <media:content url="https://www.shape.gr/Content/ImagesDatabase/fbc/1200x628/crop/both/ec/ec49d036fe944210b5ab7e17bb87d3f6.jpg" width="1200" height="628" type="image/jpeg" />
+    </item>
+    <item>
+      <title><![CDATA[Πουρές πατάτας: Η απρόσμενη προσθήκη που αυξάνει την πρωτεΐνη]]></title>
+      <guid>https://www.shape.gr/diatrofi-adynatisma/sosti-diatrofi/1021529/poures-patatas-i-aprosmeni-prosthiki-pou-auxanei-tin-proteini/</guid>
+      <link>https://www.shape.gr/diatrofi-adynatisma/sosti-diatrofi/1021529/poures-patatas-i-aprosmeni-prosthiki-pou-auxanei-tin-proteini/</link>
+      <pubDate>Thu, 26 Nov 2026 11:00:00 +0200</pubDate>
+      <description><![CDATA[Ο αγαπημένος σου πουρές αποκτά μια διαφορετική διατροφική αξία, χάρη σε ένα απλό υλικό που πιθανότατα δεν είχες σκεφτεί.]]></description>
+      <author>shape@atticamedia.gr</author>
+      <media:content url="https://www.shape.gr/Content/ImagesDatabase/fbc/1200x628/crop/both/65/652078d69de34055ac5f470fd9175cde.jpg" width="1200" height="628" type="image/jpeg" />
+    </item>
+    <item>
+      <title><![CDATA[Ζώδια σήμερα 26/11: Ημερήσιες προβλέψεις από την Α. Λεούση]]></title>
+      <guid>https://www.shape.gr/life/1021540/imerisio-oroskopio-26-noembriou-2026-apo-tin-anta-leousi/</guid>
+      <link>https://www.shape.gr/life/1021540/imerisio-oroskopio-26-noembriou-2026-apo-tin-anta-leousi/</link>
+      <pubDate>Thu, 26 Nov 2026 10:39:00 +0200</pubDate>
+      <description><![CDATA[Τα άστρα για σήμερα Πέμπτη 26 Νοεμβρίου 2026 και οι αστρολογικές τους προβλέψεις από την Άντα Λεούση]]></description>
+      <author>shape@atticamedia.gr</author>
+      <media:content url="https://www.shape.gr/Content/ImagesDatabase/fbc/1200x628/crop/both/90/90cde311594c43738672e75de653c6f2.jpg" width="1200" height="628" type="image/jpeg" />
+    </item>
+    <item>
+      <title><![CDATA[Porridge με γλυκοπατάτα: Η εναλλακτική που θυμίζει γλυκό χωρίς να χρειάζεται ζάχαρη]]></title>
+      <guid>https://www.shape.gr/diatrofi-adynatisma/sosti-diatrofi/1021530/porridge-me-glukopatata-i-enallaktiki-pou-thumizei-gluko-xoris-na-xreiazetai-zaxari/</guid>
+      <link>https://www.shape.gr/diatrofi-adynatisma/sosti-diatrofi/1021530/porridge-me-glukopatata-i-enallaktiki-pou-thumizei-gluko-xoris-na-xreiazetai-zaxari/</link>
+      <pubDate>Thu, 26 Nov 2026 10:15:00 +0200</pubDate>
+      <description><![CDATA[Δύο απλά υλικά συναντιούνται σε ένα κρεμώδες πρωινό με γεύση που θυμίζει γλυκό και μια διαφορετική εκδοχή στην καθημερινή σου βρώμη.]]></description>
+      <author>shape@atticamedia.gr</author>
+      <media:content url="https://www.shape.gr/Content/ImagesDatabase/fbc/1200x628/crop/both/48/48f402a7290f49fda62e833d8eff6da8.jpg" width="1200" height="628" type="image/jpeg" />
+    </item>
+    <item>
+      <title><![CDATA["Μαζί πρασινίζουμε τον κόσμο": Για 7η χρονιά, φυσικό μεταλλικό νερό ΒΙΚΟΣ και we4all ενώνουν δυνάμεις για τη φύση]]></title>
+      <guid>https://www.shape.gr/life/1021498/mazi-prasinizoume-ton-kosmo-gia-7i-xronia-fusiko-metalliko-nero-bikos-kai-we4all-enonoun-dunameis-gia-ti-fusi/</guid>
+      <link>https://www.shape.gr/life/1021498/mazi-prasinizoume-ton-kosmo-gia-7i-xronia-fusiko-metalliko-nero-bikos-kai-we4all-enonoun-dunameis-gia-ti-fusi/</link>
+      <pubDate>Thu, 26 Nov 2026 10:00:00 +0200</pubDate>
+      <description><![CDATA[Μια πρωτοβουλία με επίκεντρο τη φύση φέρνει ξανά κοντά εθελοντές και περιβαλλοντικές οργανώσεις, αποδεικνύοντας πως ακόμη και μια μικρή πράξη μπορεί να αφήσει ένα μεγάλο θετικό αποτύπωμα.]]></description>
+      <author>shape@atticamedia.gr</author>
+      <media:content url="https://www.shape.gr/Content/ImagesDatabase/fbc/1200x628/crop/both/fd/fd5a7470b7784dc5a0e0285b243e5207.jpg" width="1200" height="628" type="image/jpeg" />
+    </item>
+    <item>
+      <title><![CDATA[Αντί για ξυπνητήρι: Το πρωινό trick που αλλάζει τον τρόπο που ξεκινάς τη μέρα σου]]></title>
+      <guid>https://www.shape.gr/life/1021281/proino-xypnima-fysiko-fos-horis-xypnitiri/</guid>
+      <link>https://www.shape.gr/life/1021281/proino-xypnima-fysiko-fos-horis-xypnitiri/</link>
+      <pubDate>Thu, 26 Nov 2026 09:30:00 +0200</pubDate>
+      <description><![CDATA[Μια μικρή αλλαγή μπορεί να κάνει το πρωινό ξύπνημα πιο φυσικό και λιγότερο απότομο, εάν δεν σου αρέσει να ξυπνάς με ξυπνητήρι.]]></description>
+      <author>shape@atticamedia.gr</author>
+      <media:content url="https://www.shape.gr/Content/ImagesDatabase/fbc/1200x628/crop/both/5e/5e28fd85d3d544d1b717318a69c378f2.jpg" width="1200" height="628" type="image/jpeg" />
+    </item>
+    <item>
+      <title><![CDATA[Πώς θα καταλάβεις αν έχεις θρόμβωση στο πόδι;]]></title>
+      <guid>https://www.shape.gr/ygeia/zise-ygieina/1021410/pos-tha-katalabo-an-exo-thrombosi-sto-podi/</guid>
+      <link>https://www.shape.gr/ygeia/zise-ygieina/1021410/pos-tha-katalabo-an-exo-thrombosi-sto-podi/</link>
+      <pubDate>Thu, 26 Nov 2026 08:45:00 +0200</pubDate>
+      <description><![CDATA[Μερικές φορές, το σώμα σού στέλνει προειδοποιητικά μηνύματα που εύκολα μπερδεύεις με την κούραση ή την καταπόνηση της ημέρας. Ένας ειδικός εξηγεί ποια σημάδια μπορεί να κρύβουν θρόμβωση και γιατί πρέπει να τα αναγνωρίζεις εγκαίρως.]]></description>
+      <author>shape@atticamedia.gr</author>
+      <media:content url="https://www.shape.gr/Content/ImagesDatabase/fbc/1200x628/crop/both/f4/f459088c57804b389b8cb36bfd886f0a.jpg" width="1200" height="628" type="image/jpeg" />
+    </item>
+    <item>
+      <title><![CDATA[Βιταμίνη D: 4 τροφές που δεν πρέπει να συνδυάζεις με το συμπλήρωμα]]></title>
+      <guid>https://www.shape.gr/diatrofi-adynatisma/vitamines-sympliromata/1021038/bitamini-d-4-trofes-pou-den-prepei-na-sunduazeis-me-to-sumpliroma/</guid>
+      <link>https://www.shape.gr/diatrofi-adynatisma/vitamines-sympliromata/1021038/bitamini-d-4-trofes-pou-den-prepei-na-sunduazeis-me-to-sumpliroma/</link>
+      <pubDate>Thu, 26 Nov 2026 08:03:00 +0200</pubDate>
+      <description><![CDATA[Δες τι μπορεί να επηρεάσει την απορρόφηση της βιταμίνης D και πώς να αξιοποιήσεις καλύτερα το συμπλήρωμά σου.]]></description>
+      <author>shape@atticamedia.gr</author>
+      <media:content url="https://www.shape.gr/Content/ImagesDatabase/fbc/1200x628/crop/both/cf/cfc5795b89154f8e9001e1390c847c7f.jpg" width="1200" height="628" type="image/jpeg" />
+    </item>
+    <item>
+      <title><![CDATA[Επανασυνδέσεις στο πρώτο τρίμηνο του 2027: Ποια ζώδια θα δώσουν δεύτερη ευκαιρία;]]></title>
+      <guid>https://www.shape.gr/life/1021526/epanasundeseis-sto-proto-trimino-tou-2027-poia-zodia-tha-dosoun-deuteri-eukairia/</guid>
+      <link>https://www.shape.gr/life/1021526/epanasundeseis-sto-proto-trimino-tou-2027-poia-zodia-tha-dosoun-deuteri-eukairia/</link>
+      <pubDate>Wed, 25 Nov 2026 21:30:00 +0200</pubDate>
+      <description><![CDATA[Ποια ζώδια έχουν αυξημένες πιθανότητες να συναντήσουν ξανά ανθρώπους από το παρελθόν τους μέσα στο πρώτο τρίμηνο του 2027. Η Χριστίνα Στεργίου μας δίνει τις προβλέψεις της.]]></description>
+      <author>shape@atticamedia.gr</author>
+      <media:content url="https://www.shape.gr/Content/ImagesDatabase/fbc/1200x628/crop/both/a1/a13443e085dd47f6b1ff5058b8a69a14.jpg" width="1200" height="628" type="image/jpeg" />
+    </item>
+    <item>
+      <title><![CDATA[Ξυπνάς συχνά μέσα στη νύχτα; Η βιταμίνη που ίσως σου λείπει]]></title>
+      <guid>https://www.shape.gr/ygeia/zise-ygieina/1021537/xupnas-suxna-mesa-sti-nuxta-i-bitamini-pou-isos-sou-leipei/</guid>
+      <link>https://www.shape.gr/ygeia/zise-ygieina/1021537/xupnas-suxna-mesa-sti-nuxta-i-bitamini-pou-isos-sou-leipei/</link>
+      <pubDate>Wed, 25 Nov 2026 20:00:00 +0200</pubDate>
+      <description><![CDATA[Αν στριφογυρίζεις στο κρεβάτι ή ξυπνάς μέσα στη νύχτα, ίσως πρέπει να κοιτάξεις λίγο πιο προσεκτικά τα επίπεδα της βιταμίνης αυτής στον οργανισμό σου. Νέα μελέτη αποκαλύπτει μια ενδιαφέρουσα σύνδεση με τη διάρκεια του ύπνου.]]></description>
+      <author>shape@atticamedia.gr</author>
+      <media:content url="https://www.shape.gr/Content/ImagesDatabase/fbc/1200x628/crop/both/6d/6dbe440af3c642a09211565156224782.jpg" width="1200" height="628" type="image/jpeg" />
+    </item>
+    <item>
+      <title><![CDATA[Τοπ μέλωμα, τραγανά, τέλεια υφή: Τα 10+1 χρυσά tips για να σας πετύχουν τα μελομακάρονα φέτος]]></title>
+      <guid>https://www.shape.gr/diatrofi-adynatisma/sosti-diatrofi/1021527/top-meloma-tragana-teleia-ufi-ta-101-xrusa-tips-gia-na-sas-petuxoun-ta-melomakarona-fetos/</guid>
+      <link>https://www.shape.gr/diatrofi-adynatisma/sosti-diatrofi/1021527/top-meloma-tragana-teleia-ufi-ta-101-xrusa-tips-gia-na-sas-petuxoun-ta-melomakarona-fetos/</link>
+      <pubDate>Wed, 25 Nov 2026 18:30:00 +0200</pubDate>
+      <description><![CDATA[Αφράτα και τραγανά μελομακάρονα, μελωμένα όσο πρέπει, αρωματικά και με την ιδανική υφή που λιώνει στο στόμα.]]></description>
+      <author>shape@atticamedia.gr</author>
+      <media:content url="https://www.shape.gr/Content/ImagesDatabase/fbc/1200x628/crop/both/59/5921a1d2da314b38bb36d2c4da94fdde.jpg" width="1200" height="628" type="image/jpeg" />
+    </item>
+    <item>
+      <title><![CDATA[Ξέχνα το πράσινο: Το ανατρεπτικό χρώμα δέντρου που γίνεται η μεγάλη τάση φέτος]]></title>
+      <guid>https://www.shape.gr/life/1021538/roz-xristougenniatiko-dentro-i-anatreptiki-tasi-pou-allazei-ti-giortini-diakosmisi/</guid>
+      <link>https://www.shape.gr/life/1021538/roz-xristougenniatiko-dentro-i-anatreptiki-tasi-pou-allazei-ti-giortini-diakosmisi/</link>
+      <pubDate>Wed, 25 Nov 2026 17:00:00 +0200</pubDate>
+      <description><![CDATA[Από το παραδοσιακό πράσινο σε μια πιο τολμηρή, απρόσμενη απόχρωση, το χριστουγεννιάτικο δέντρο αποκτά φέτος νέο χαρακτήρα και γίνεται το πιο ξεχωριστό στοιχείο της γιορτινής διακόσμησης.]]></description>
+      <author>shape@atticamedia.gr</author>
+      <media:content url="https://www.shape.gr/Content/ImagesDatabase/fbc/1200x628/crop/both/c9/c975f1db2ae44218839fa2b670a7b4ce.jpg" width="1200" height="628" type="image/jpeg" />
+    </item>
+  </channel>
+</rss>

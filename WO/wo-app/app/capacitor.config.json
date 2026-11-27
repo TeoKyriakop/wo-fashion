@@ -1,0 +1,14 @@
+{
+  "appId": "io.github.teokyriakop.wofashion",
+  "appName": "WO",
+  "webDir": "www",
+  "android": {
+    "allowMixedContent": false
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 600,
+      "backgroundColor": "#1C1416"
+    }
+  }
+}

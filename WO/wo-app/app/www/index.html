@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1416">
+<title>WO</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#1c1416; --ink:#fff7f3; --muted:#cdb9b4; --rose:#e8a4a0; --rose-deep:#c46d6a;
+  --gold:#d9b779; --cream:#faf3ee; --paper:#fffaf7; --text:#2a1f21; --text-soft:#7a6a6c;
+  --line:#eadbd5; --chip:#f3e6e0;
+  --fashion:#c46d6a; --beauty:#b0699a; --health:#5f9b82; --products:#c09042;
+  --serif:"Playfair Display", Georgia, "Times New Roman", serif;
+  --sans:"Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --safe-top:env(safe-area-inset-top,0px); --safe-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family:var(--sans);overflow:hidden}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+.screen{position:fixed;inset:0;display:flex;flex-direction:column}
+.hidden{display:none!important}
+
+/* ---------- Top bar ---------- */
+.top{position:absolute;top:0;left:0;right:0;z-index:20;padding:calc(var(--safe-top) + 10px) 16px 10px;
+  background:linear-gradient(to bottom,rgba(20,12,14,.85),rgba(20,12,14,0));}
+.row{display:flex;align-items:center;gap:10px}
+.brand{font-family:var(--serif);font-size:28px;font-weight:700;letter-spacing:.5px;line-height:1}
+.brand i{color:var(--rose);font-style:italic;font-weight:500}
+.spacer{flex:1}
+.icon-btn{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.12);backdrop-filter:blur(8px)}
+.icon-btn svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.lang{height:38px;padding:0 12px;border-radius:19px;background:rgba(255,255,255,.12);font-weight:700;font-size:13px;letter-spacing:.5px}
+.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin-top:12px;padding-bottom:2px}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;padding:7px 14px;border-radius:18px;font-size:13px;font-weight:600;background:rgba(255,255,255,.12);color:var(--ink);white-space:nowrap}
+.chip.on{background:var(--ink);color:var(--bg)}
+.day-label{font-size:12px;color:var(--muted);margin-top:8px;min-height:16px}
+
+/* ---------- Feed ---------- */
+.feed{flex:1;overflow-y:auto;scroll-snap-type:y mandatory;overscroll-behavior:contain;scrollbar-width:none}
+.feed::-webkit-scrollbar{display:none}
+.feed.horizontal{display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory}
+.reel{position:relative;height:100%;min-height:100%;width:100%;flex:none;scroll-snap-align:start;scroll-snap-stop:always;overflow:hidden;background:#2b1f22}
+.reel .bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.reel .bg.fallback{display:grid;place-items:center}
+.reel .bg.fallback span{font-family:var(--serif);font-size:42vmin;font-style:italic;color:rgba(255,255,255,.09);line-height:1}
+.reel .shade{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(20,12,14,.55) 0%,rgba(20,12,14,0) 28%,rgba(20,12,14,.15) 45%,rgba(20,12,14,.93) 78%)}
+.reel .body{position:absolute;left:0;right:64px;bottom:calc(var(--safe-bottom) + 92px);padding:0 18px}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:5px 10px;border-radius:12px;color:#fff}
+.reel h2{font-family:var(--serif);font-weight:700;font-size:clamp(23px,6.3vw,32px);line-height:1.18;margin:12px 0 10px;text-wrap:balance}
+.reel p{margin:0 0 12px;font-size:15px;line-height:1.5;color:#f3e7e3;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.meta{font-size:12.5px;color:var(--muted);display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.meta b{color:var(--ink);font-weight:700}
+.read{margin-top:14px;display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:24px;background:var(--ink);color:var(--bg);font-weight:700;font-size:14px}
+.side{position:absolute;right:12px;bottom:calc(var(--safe-bottom) + 104px);display:flex;flex-direction:column;gap:14px}
+.side .icon-btn{width:44px;height:44px}
+.side .icon-btn.saved{background:var(--rose-deep)}
+.side .icon-btn.saved svg{fill:#fff}
+.end{height:100%;min-height:100%;width:100%;flex:none;scroll-snap-align:start;display:grid;place-items:center;text-align:center;padding:40px;color:var(--muted)}
+.spinner{width:34px;height:34px;border-radius:50%;border:3px solid rgba(255,255,255,.15);border-top-color:var(--rose);animation:spin 1s linear infinite;margin:0 auto 14px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.pill{position:absolute;left:50%;transform:translateX(-50%);top:calc(var(--safe-top) + 128px);z-index:25;background:var(--rose);color:#2a1416;font-weight:700;font-size:13px;padding:9px 16px;border-radius:20px;box-shadow:0 6px 20px rgba(0,0,0,.35)}
+
+/* ---------- Ask button ---------- */
+.ask-fab{position:absolute;left:16px;right:16px;bottom:calc(var(--safe-bottom) + 18px);z-index:30;height:56px;border-radius:28px;
+  background:linear-gradient(135deg,var(--rose),var(--gold));color:#2a1416;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.ask-fab svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2}
+
+/* ---------- Sheets ---------- */
+.sheet-wrap{position:fixed;inset:0;z-index:60;background:rgba(10,5,6,.55);display:flex;align-items:flex-end}
+.sheet{width:100%;max-height:75%;overflow:auto;background:var(--paper);color:var(--text);border-radius:22px 22px 0 0;padding:18px 16px calc(var(--safe-bottom) + 20px)}
+.sheet h3{font-family:var(--serif);font-size:22px;margin:4px 0 4px}
+.sheet h4{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--text-soft);margin:18px 0 8px}
+.sheet .sub{color:var(--text-soft);font-size:13px;margin-bottom:14px}
+.day-btn{display:flex;width:100%;justify-content:space-between;align-items:center;padding:14px 4px;border-bottom:1px solid var(--line);font-size:15px;text-align:left}
+.day-btn small{color:var(--text-soft)}
+.day-btn.on{color:var(--rose-deep);font-weight:700}
+.seg{display:flex;background:var(--chip);border-radius:14px;padding:4px;gap:4px}
+.seg button{flex:1;padding:11px 6px;border-radius:10px;font-weight:600;font-size:14px;color:var(--text-soft)}
+.seg button.on{background:var(--paper);color:var(--text);box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.done{margin-top:20px;width:100%;padding:14px;border-radius:14px;background:var(--text);color:var(--cream);font-weight:700}
+
+/* ---------- Search (Ρώτα τη WO) ---------- */
+#ask{background:var(--cream);color:var(--text)}
+.ask-top{padding:calc(var(--safe-top) + 10px) 12px 12px;background:var(--paper);border-bottom:1px solid var(--line)}
+.ask-top .icon-btn{background:var(--chip);color:var(--text)}
+.ask-title{font-family:var(--serif);font-size:21px;font-weight:700}
+.ask-title small{display:block;font-family:var(--sans);font-size:12px;font-weight:500;color:var(--text-soft)}
+.searchbox{display:flex;align-items:center;gap:8px;margin-top:12px;background:var(--cream);border:1px solid var(--line);border-radius:24px;padding:0 6px 0 16px}
+.searchbox:focus-within{border-color:var(--rose)}
+.searchbox input{flex:1;border:0;background:none;font:inherit;font-size:15.5px;padding:12px 0;outline:none;color:var(--text);min-width:0}
+.go{width:40px;height:40px;border-radius:50%;background:var(--rose-deep);color:#fff;display:grid;place-items:center;flex:none}
+.go svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:2}
+.results{flex:1;overflow-y:auto;padding:16px 16px calc(var(--safe-bottom) + 20px)}
+.hello{text-align:center;padding:10px 4px 8px}
+.hello .mark{width:60px;height:60px;border-radius:50%;margin:0 auto 12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--rose),var(--gold));font-family:var(--serif);font-weight:700;font-size:22px;color:#2a1416}
+.hello h3{font-family:var(--serif);font-size:23px;margin:0 0 6px}
+.hello p{color:var(--text-soft);margin:0 0 18px;font-size:14.5px;line-height:1.5}
+.topics{display:grid;grid-template-columns:1fr 1fr;gap:10px;text-align:left}
+.topic{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:12px;font-size:13.5px;line-height:1.35}
+.topic b{display:block;font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-bottom:5px}
+.recent{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;justify-content:center}
+.recent button{background:var(--chip);border-radius:16px;padding:7px 12px;font-size:13px}
+.res-head{font-size:13px;color:var(--text-soft);margin:4px 2px 12px}
+.res-head.sep{margin-top:22px;padding-top:16px;border-top:1px solid var(--line)}
+.card{display:flex;gap:12px;width:100%;text-align:left;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:10px;margin-bottom:10px}
+.card .thumb{width:92px;height:92px;border-radius:12px;flex:none;background-size:cover;background-position:center}
+.card .ct{flex:1;min-width:0}
+.card .ct .tag{font-size:9.5px;padding:3px 7px;border-radius:8px}
+.card h5{font-family:var(--serif);font-size:16px;line-height:1.25;margin:6px 0 4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card p{margin:0 0 4px;font-size:12.5px;line-height:1.4;color:var(--text-soft);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card small{font-size:11.5px;color:var(--text-soft)}
+.none{text-align:center;color:var(--text-soft);padding:30px 10px;line-height:1.5}
+.loading{display:grid;place-items:center;padding:40px}
+.loading .spinner{border-color:var(--line);border-top-color:var(--rose-deep)}
+</style>
+</head>
+<body>
+
+<!-- ================= FEED ================= -->
+<section id="home" class="screen">
+  <header class="top">
+    <div class="row">
+      <div class="brand">W<i>O</i></div>
+      <div class="spacer"></div>
+      <button class="icon-btn" id="layoutBtn" aria-label="Layout"></button>
+      <button class="icon-btn" id="archiveBtn" aria-label="Archive">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
+      </button>
+      <button class="lang" id="langBtn">ΕΛ</button>
+    </div>
+    <nav class="chips" id="chips"></nav>
+    <div class="day-label" id="dayLabel"></div>
+  </header>
+
+  <main class="feed" id="feed"></main>
+  <div class="pill hidden" id="newPill"></div>
+
+  <button class="ask-fab" id="askBtn">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+    <span id="askBtnText"></span>
+  </button>
+</section>
+
+<!-- ================= Ρώτα τη WO (αναζήτηση) ================= -->
+<section id="ask" class="screen hidden">
+  <header class="ask-top">
+    <div class="row">
+      <button class="icon-btn" id="backBtn" aria-label="Back">
+        <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="ask-title"><span id="askTitle"></span><small id="askSub"></small></div>
+    </div>
+    <form class="searchbox" id="searchForm">
+      <input id="q" type="search" enterkeyhint="search" autocomplete="off">
+      <button class="go" type="submit" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+    </form>
+  </header>
+  <div class="results" id="results"></div>
+</section>
+
+<div class="sheet-wrap hidden" id="sheet"><div class="sheet" id="sheetBody"></div></div>
+
+<script>
+(() => {
+/* ------------------------------------------------------------ */
+/* Κείμενα ΕΛ / EN                                               */
+/* ------------------------------------------------------------ */
+const T = {
+  el: {
+    cats: { all:"Όλα", fashion:"Μόδα", beauty:"Ομορφιά", health:"Υγεία & Ευεξία", products:"Νέα προϊόντα", saved:"Αποθηκευμένα" },
+    ask:"Ρώτα τη WO", askSub:"Βρες άρθρα για ό,τι σε ενδιαφέρει",
+    read:"Διάβασε το άρθρο", today:"Σήμερα", yesterday:"Χθες",
+    archive:"Αρχείο", archiveSub:"Δες τα άρθρα προηγούμενων ημερών.",
+    older:"Φόρτωση παλαιότερων…", noMore:"Είδες όλα τα άρθρα του αρχείου ✨", empty:"Δεν υπάρχουν ακόμα άρθρα εδώ.",
+    newReels:n=>`↑ ${n} νέα άρθρα`, demo:"Δείγμα περιεχομένου", savedEmpty:"Πάτησε την καρδιά σε ένα άρθρο για να το αποθηκεύσεις.",
+    settings:"Ρυθμίσεις", appLang:"Γλώσσα εφαρμογής", artLang:"Άρθρα από", artEl:"Ελληνικά site", artEn:"Ξένα περιοδικά", artAll:"Όλα", done:"OK",
+    helloT:"Τι θέλεις να μάθεις;", helloP:"Γράψε μια ερώτηση ή λέξεις και θα βρω σχετικά άρθρα από τα περιοδικά μόδας, ομορφιάς και υγείας.",
+    topics:[
+      ["fashion","Τι να φορέσω σε χειμωνιάτικο γάμο"],
+      ["fashion","Χρώματα που ταιριάζουν σε ξανθά μαλλιά"],
+      ["beauty","Περιποίηση για ξηρό δέρμα"],
+      ["health","Άσκηση στην εμμηνόπαυση"],
+    ],
+    placeholder:"π.χ. τι παλτό να διαλέξω", recent:"Πρόσφατες αναζητήσεις",
+    found:n=>`${n} άρθρα`, otherLang:"Από ξένα περιοδικά", otherLangEl:"Από ελληνικά site",
+    none:"Δεν βρέθηκαν άρθρα. Δοκίμασε άλλες ή λιγότερες λέξεις.", offline:"Χρειάζεται σύνδεση στο internet.",
+    layoutV:"Κάθετα", layoutH:"Οριζόντια", share:"Κοινοποίηση", save:"Αποθήκευση",
+    ago:(m)=> m<60?`πριν ${m} λ.`:m<1440?`πριν ${Math.round(m/60)} ώ.`:`πριν ${Math.round(m/1440)} ημ.`,
+  },
+  en: {
+    cats: { all:"All", fashion:"Fashion", beauty:"Beauty", health:"Health & Wellness", products:"New products", saved:"Saved" },
+    ask:"Ask WO", askSub:"Find articles on anything you like",
+    read:"Read the article", today:"Today", yesterday:"Yesterday",
+    archive:"Archive", archiveSub:"Browse articles from previous days.",
+    older:"Loading older articles…", noMore:"You've seen the whole archive ✨", empty:"No articles here yet.",
+    newReels:n=>`↑ ${n} new articles`, demo:"Sample content", savedEmpty:"Tap the heart on an article to save it.",
+    settings:"Settings", appLang:"App language", artLang:"Articles from", artEl:"Greek sites", artEn:"International magazines", artAll:"All", done:"OK",
+    helloT:"What would you like to know?", helloP:"Type a question or a few words and I'll find related articles from fashion, beauty and health magazines.",
+    topics:[
+      ["fashion","What to wear to a winter wedding"],
+      ["fashion","Colours that suit blonde hair"],
+      ["beauty","Care for dry skin"],
+      ["health","Exercise during menopause"],
+    ],
+    placeholder:"e.g. which coat to choose", recent:"Recent searches",
+    found:n=>`${n} articles`, otherLang:"From international magazines", otherLangEl:"From Greek sites",
+    none:"No articles found. Try different or fewer words.", offline:"You need an internet connection.",
+    layoutV:"Vertical", layoutH:"Horizontal", share:"Share", save:"Save",
+    ago:(m)=> m<60?`${m} min ago`:m<1440?`${Math.round(m/60)} h ago`:`${Math.round(m/1440)} d ago`,
+  },
+};
+const CAT_COLOR = { fashion:"var(--fashion)", beauty:"var(--beauty)", health:"var(--health)", products:"var(--products)" };
+const CAT_GRAD = {
+  fashion:"linear-gradient(160deg,#5a2f33,#c46d6a 60%,#e8a4a0)",
+  beauty:"linear-gradient(160deg,#47263f,#b0699a 60%,#e6b3cf)",
+  health:"linear-gradient(160deg,#21392f,#5f9b82 60%,#b9dcc9)",
+  products:"linear-gradient(160deg,#4a3616,#c09042 60%,#ecd29e)",
+};
+
+/* ------------------------------------------------------------ */
+/* Κατάσταση                                                     */
+/* ------------------------------------------------------------ */
+const store = {
+  get(k, d){ try{ const v = localStorage.getItem("wo:"+k); return v==null ? d : JSON.parse(v); }catch{ return d; } },
+  set(k, v){ try{ localStorage.setItem("wo:"+k, JSON.stringify(v)); }catch{} },
+};
+const startLang = store.get("lang", (navigator.language||"el").toLowerCase().startsWith("en") ? "en" : "el");
+const S = {
+  lang: startLang,
+  articles: store.get("articles", startLang),   // "el" | "en" | "all"
+  layout: store.get("layout", "vertical"),
+  cat: "all",
+  days: null, loaded: [], nextDay: undefined, loading: false,
+  saved: store.get("saved", {}),
+  recent: store.get("recent", []),
+  base: "", demo: false,
+};
+const t = () => T[S.lang];
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+
+/* ------------------------------------------------------------ */
+/* Δεδομένα (αρχεία JSON στο GitHub Pages)                       */
+/* ------------------------------------------------------------ */
+async function loadConfig(){
+  try{ const r = await fetch("config.json", { cache:"no-cache" }); const c = await r.json(); S.base = (c.dataBase||"").trim(); }catch{}
+  if(S.base && !S.base.endsWith("/")) S.base += "/";
+  S.demo = !S.base;
+}
+async function getJSON(path, ms = 15000){
+  const r = await fetch(S.base + path + (path.includes("?") ? "&" : "?") + "t=" + Math.floor(Date.now() / 120000), { signal:AbortSignal.timeout(ms) });
+  if(!r.ok) throw new Error(String(r.status));
+  return r.json();
+}
+async function getDays(force){
+  if(S.demo) return demoDays();
+  if(!S.days || force) S.days = await getJSON("data/days.json");
+  return S.days;
+}
+async function fetchDay(day, force){
+  if(S.demo) return demoDay(day);
+  const days = await getDays(force);
+  if(!days.length) return { day:null, reels:[], prevDay:null };
+  const d = day && days.includes(day) ? day : days[0];
+  const reels = await getJSON("data/day/" + d + ".json");
+  return { day:d, reels, prevDay:days[days.indexOf(d) + 1] || null };
+}
+
+/* ------------------------------------------------------------ */
+/* Ροή άρθρων                                                    */
+/* ------------------------------------------------------------ */
+const langOK = (r) => S.articles === "all" || (r.lang || "en") === S.articles;
+function allReels(){
+  if(S.cat === "saved") return Object.values(S.saved).sort((a,b) => (b.savedAt||0) - (a.savedAt||0));
+  const out = [];
+  for(const d of S.loaded) for(const r of d.reels){
+    if(langOK(r) && (S.cat === "all" || r.category === S.cat)) out.push(r);
+  }
+  return out;
+}
+function fmtDay(day){
+  if(!day) return "";
+  const iso = d => d.toLocaleDateString("en-CA");
+  const today = new Date(); if(day === iso(today)) return t().today;
+  const y = new Date(today); y.setDate(y.getDate()-1); if(day === iso(y)) return t().yesterday;
+  return new Date(day + "T12:00:00").toLocaleDateString(S.lang === "el" ? "el-GR" : "en-GB", { weekday:"long", day:"numeric", month:"long" });
+}
+const ago = (iso) => t().ago(Math.max(1, Math.round((Date.now() - new Date(iso).getTime()) / 60000)));
+
+function reelHTML(r){
+  const col = CAT_COLOR[r.category] || "var(--rose-deep)";
+  const bg = r.image
+    ? `<div class="bg" style="background-image:url('${esc(r.image)}')"></div>`
+    : `<div class="bg fallback" style="background:${CAT_GRAD[r.category]||CAT_GRAD.fashion}"><span>${esc((r.title||"W")[0])}</span></div>`;
+  return `<article class="reel" data-id="${esc(r.id)}">
+    ${bg}<div class="shade"></div>
+    <div class="body">
+      <span class="tag" style="background:${col}">${esc(t().cats[r.category] || r.category)}</span>
+      <h2>${esc(r.title)}</h2>
+      ${r.excerpt ? `<p>${esc(r.excerpt)}</p>` : ""}
+      <div class="meta"><b>${esc(r.source)}</b><span>·</span><span>${ago(r.published)}</span></div>
+      ${r.url ? `<button class="read" data-open="${esc(r.url)}">${t().read} →</button>` : ""}
+    </div>
+    <div class="side">
+      <button class="icon-btn ${S.saved[r.id] ? "saved" : ""}" data-save="${esc(r.id)}" aria-label="${t().save}">
+        <svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+      </button>
+      ${r.url ? `<button class="icon-btn" data-share="${esc(r.id)}" aria-label="${t().share}">
+        <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+      </button>` : ""}
+    </div>
+  </article>`;
+}
+
+function renderFeed(keepScroll){
+  const feed = $("feed");
+  const pos = keepScroll ? (S.layout === "vertical" ? feed.scrollTop : feed.scrollLeft) : 0;
+  feed.className = "feed" + (S.layout === "horizontal" ? " horizontal" : "");
+  const reels = allReels();
+  let html = reels.map(reelHTML).join("");
+  if(S.cat === "saved"){ if(!reels.length) html = `<div class="end"><div>${t().savedEmpty}</div></div>`; }
+  else if(S.nextDay === null) html += `<div class="end"><div>${reels.length ? t().noMore : t().empty}</div></div>`;
+  else html += `<div class="end" id="sentinel"><div><div class="spinner"></div>${t().older}</div></div>`;
+  feed.innerHTML = html;
+  if(keepScroll){ S.layout === "vertical" ? (feed.scrollTop = pos) : (feed.scrollLeft = pos); }
+  else { feed.scrollTop = 0; feed.scrollLeft = 0; }
+  observeSentinel();
+  updateDayLabel();
+}
+
+let io;
+function observeSentinel(){
+  io && io.disconnect();
+  const s = $("sentinel"); if(!s) return;
+  io = new IntersectionObserver((ents) => { if(ents.some(e => e.isIntersecting)) loadOlder(); }, { root:$("feed"), rootMargin:"200%" });
+  io.observe(s);
+}
+async function loadOlder(){
+  if(S.loading || S.nextDay === null) return;
+  S.loading = true;
+  try{
+    const data = await fetchDay(S.nextDay);
+    if(data.day && !S.loaded.some(d => d.day === data.day)) S.loaded.push({ day:data.day, reels:data.reels || [] });
+    S.nextDay = data.prevDay || null;
+    renderFeed(true);
+    if(allReels().length < 3 && S.nextDay){ S.loading = false; return loadOlder(); }
+  }catch{
+    if(!S.loaded.length) $("feed").innerHTML = `<div class="end"><div>${t().offline}</div></div>`;
+  } finally { S.loading = false; }
+}
+async function loadLatest(){
+  S.loaded = []; S.nextDay = undefined;
+  try{
+    const data = await fetchDay(null, true);
+    S.loaded = data.day ? [{ day:data.day, reels:data.reels || [] }] : [];
+    S.nextDay = data.prevDay || null;
+    store.set("feedCache", { loaded:S.loaded, nextDay:S.nextDay });
+  }catch{
+    const c = store.get("feedCache", null);
+    if(c){ S.loaded = c.loaded; S.nextDay = c.nextDay; } else S.nextDay = null;
+  }
+  renderFeed();
+  if(allReels().length < 3 && S.nextDay) loadOlder();
+}
+function updateDayLabel(){
+  const feed = $("feed");
+  let label = "";
+  if(S.cat !== "saved"){
+    const idx = S.layout === "vertical" ? Math.round(feed.scrollTop / (feed.clientHeight||1)) : Math.round(feed.scrollLeft / (feed.clientWidth||1));
+    const r = allReels()[idx];
+    const d = r ? S.loaded.find(d => d.reels.includes(r)) : S.loaded[0];
+    if(d) label = fmtDay(d.day);
+  }
+  if(S.demo) label += (label ? " · " : "") + t().demo;
+  $("dayLabel").textContent = label;
+}
+
+// Νέα άρθρα όσο η εφαρμογή είναι ανοιχτή
+async function checkNew(){
+  if(S.demo || document.hidden || !S.loaded.length) return;
+  try{
+    const data = await fetchDay(null, true);
+    const known = new Set(S.loaded[0].reels.map(r => r.id));
+    const fresh = data.reels.filter(r => !known.has(r.id) && langOK(r));
+    if(fresh.length){ S.pending = data; const p = $("newPill"); p.textContent = t().newReels(fresh.length); p.classList.remove("hidden"); }
+  }catch{}
+}
+$("newPill").onclick = () => {
+  const data = S.pending; if(!data) return;
+  if(S.loaded[0] && S.loaded[0].day === data.day) S.loaded[0].reels = data.reels;
+  else S.loaded.unshift({ day:data.day, reels:data.reels });
+  S.pending = null; $("newPill").classList.add("hidden"); renderFeed();
+};
+
+/* ------------------------------------------------------------ */
+/* Κουμπιά επάνω                                                 */
+/* ------------------------------------------------------------ */
+function renderChips(){
+  const cats = ["all","fashion","beauty","health","products","saved"];
+  $("chips").innerHTML = cats.map(c => `<button class="chip ${S.cat===c?"on":""}" data-cat="${c}">${c==="saved"?"♡ ":""}${t().cats[c]}</button>`).join("");
+}
+$("chips").onclick = (e) => {
+  const b = e.target.closest("[data-cat]"); if(!b) return;
+  S.cat = b.dataset.cat; renderChips(); renderFeed();
+  if(S.cat !== "saved" && allReels().length < 3 && S.nextDay) loadOlder();
+};
+function renderLayoutBtn(){
+  const v = S.layout === "vertical";
+  $("layoutBtn").innerHTML = v
+    ? `<svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M8 12h8M14 10l2 2-2 2"/></svg>`
+    : `<svg viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M12 8v8M10 14l2 2 2-2"/></svg>`;
+  $("layoutBtn").title = v ? t().layoutH : t().layoutV;
+}
+$("layoutBtn").onclick = () => { S.layout = S.layout === "vertical" ? "horizontal" : "vertical"; store.set("layout", S.layout); renderLayoutBtn(); renderFeed(); };
+function applyTexts(){
+  document.documentElement.lang = S.lang;
+  $("langBtn").textContent = S.lang === "el" ? "ΕΛ" : "EN";
+  $("askBtnText").textContent = t().ask; $("askTitle").textContent = t().ask; $("askSub").textContent = t().askSub;
+  $("q").placeholder = t().placeholder;
+}
+
+// Ρυθμίσεις γλώσσας
+$("langBtn").onclick = () => openSettings();
+function openSettings(){
+  const seg = (name, opts, cur) => `<div class="seg">${opts.map(([v,l]) => `<button data-${name}="${v}" class="${v===cur?"on":""}">${l}</button>`).join("")}</div>`;
+  $("sheetBody").innerHTML = `<h3>${t().settings}</h3>
+    <h4>${t().appLang}</h4>${seg("lang", [["el","Ελληνικά"],["en","English"]], S.lang)}
+    <h4>${t().artLang}</h4>${seg("art", [["el",t().artEl],["en",t().artEn],["all",t().artAll]], S.articles)}
+    <button class="done" id="doneBtn">${t().done}</button>`;
+  $("sheet").classList.remove("hidden");
+}
+function setLang(l){
+  const followed = S.articles === S.lang;   // αν τα άρθρα ακολουθούσαν τη γλώσσα, συνεχίζουν
+  S.lang = l; store.set("lang", l);
+  if(followed){ S.articles = l; store.set("articles", l); }
+  applyTexts(); renderChips(); renderLayoutBtn(); renderFeed(); openSettings();
+}
+function setArticles(a){ S.articles = a; store.set("articles", a); renderFeed(); openSettings(); if(allReels().length < 3 && S.nextDay) loadOlder(); }
+
+// Κουμπιά μέσα στα άρθρα
+async function openUrl(url){
+  try{ const B = window.Capacitor?.Plugins?.Browser; if(B){ await B.open({ url }); return; } }catch{}
+  window.open(url, "_blank", "noopener");
+}
+function findReel(id){ return allReels().find(r => r.id === id) || S.saved[id] || (S.searchData||[]).find(r => r.id === id); }
+$("feed").onclick = async (e) => {
+  const o = e.target.closest("[data-open]"); if(o) return openUrl(o.dataset.open);
+  const s = e.target.closest("[data-save]");
+  if(s){
+    const id = s.dataset.save;
+    if(S.saved[id]) delete S.saved[id]; else { const r = findReel(id); if(r) S.saved[id] = { ...r, savedAt:Date.now() }; }
+    store.set("saved", S.saved); s.classList.toggle("saved", !!S.saved[id]);
+    if(S.cat === "saved") renderFeed(true);
+    return;
+  }
+  const sh = e.target.closest("[data-share]");
+  if(sh){
+    const r = findReel(sh.dataset.share); if(!r) return;
+    try{
+      const P = window.Capacitor?.Plugins?.Share;
+      if(P) await P.share({ title:r.title, url:r.url });
+      else if(navigator.share) await navigator.share({ title:r.title, url:r.url });
+      else await navigator.clipboard.writeText(r.url);
+    }catch{}
+  }
+};
+let scrollT;
+$("feed").addEventListener("scroll", () => { clearTimeout(scrollT); scrollT = setTimeout(updateDayLabel, 120); }, { passive:true });
+
+// Αρχείο ημερών
+$("archiveBtn").onclick = async () => {
+  let days = [];
+  try{ days = await getDays(true); }catch{}
+  const current = S.loaded[0]?.day;
+  $("sheetBody").innerHTML = `<h3>${t().archive}</h3><div class="sub">${t().archiveSub}</div>` +
+    (days.length ? days.map(d => `<button class="day-btn ${d===current?"on":""}" data-day="${d}"><span>${esc(fmtDay(d))}</span><small>${d}</small></button>`).join("") : `<div class="sub">${t().offline}</div>`);
+  $("sheet").classList.remove("hidden");
+};
+$("sheet").onclick = async (e) => {
+  if(e.target === $("sheet") || e.target.id === "doneBtn") return $("sheet").classList.add("hidden");
+  const l = e.target.closest("[data-lang]"); if(l) return setLang(l.dataset.lang);
+  const a = e.target.closest("[data-art]"); if(a) return setArticles(a.dataset.art);
+  const b = e.target.closest("[data-day]"); if(!b) return;
+  $("sheet").classList.add("hidden");
+  if(S.cat === "saved"){ S.cat = "all"; renderChips(); }
+  try{
+    const data = await fetchDay(b.dataset.day);
+    S.loaded = [{ day:data.day, reels:data.reels || [] }]; S.nextDay = data.prevDay || null;
+    renderFeed();
+    if(allReels().length < 3 && S.nextDay) loadOlder();
+  }catch{}
+};
+
+/* ------------------------------------------------------------ */
+/* Ρώτα τη WO = αναζήτηση στα άρθρα                              */
+/* ------------------------------------------------------------ */
+function showAsk(on){
+  $("home").classList.toggle("hidden", on); $("ask").classList.toggle("hidden", !on);
+  if(on){ if(!$("q").value) renderHello(); history.pushState({ ask:1 }, ""); loadSearchData(); }
+}
+$("askBtn").onclick = () => showAsk(true);
+$("backBtn").onclick = () => history.state?.ask ? history.back() : showAsk(false);
+window.addEventListener("popstate", () => { if(!$("ask").classList.contains("hidden")){ $("home").classList.remove("hidden"); $("ask").classList.add("hidden"); } });
+try{ window.Capacitor?.Plugins?.App?.addListener("backButton", () => {
+  if(!$("sheet").classList.contains("hidden")) return $("sheet").classList.add("hidden");
+  if(!$("ask").classList.contains("hidden")) return showAsk(false);
+  window.Capacitor.Plugins.App.exitApp();
+}); }catch{}
+
+function renderHello(){
+  $("results").innerHTML = `<div class="hello"><div class="mark">WO</div><h3>${t().helloT}</h3><p>${t().helloP}</p>
+    <div class="topics">${t().topics.map(([c,q]) => `<button class="topic" data-q="${esc(q)}"><b style="color:${CAT_COLOR[c]}">${t().cats[c]}</b>${esc(q)}</button>`).join("")}</div>
+    ${S.recent.length ? `<h4 style="font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--text-soft);margin:22px 0 0">${t().recent}</h4>
+      <div class="recent">${S.recent.map(q => `<button data-q="${esc(q)}">${esc(q)}</button>`).join("")}</div>` : ""}
+  </div>`;
+}
+
+async function loadSearchData(){
+  if(S.searchData && Date.now() - S.searchAt < 10 * 60 * 1000) return S.searchData;
+  if(!S.searchPromise){
+    S.searchPromise = (S.demo ? Promise.resolve(demoAll()) : getJSON("data/search.json", 20000))
+      .then(d => { S.searchData = d; S.searchAt = Date.now(); return d; })
+      .finally(() => { S.searchPromise = null; });
+  }
+  return S.searchPromise;
+}
+
+const norm = (s) => (s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/ς/g, "σ");
+const STOP = new Set(("και να το τα τη την της τον του των οι η ο ενα μια με σε για απο που πως τι ποια ποιο ποιες ποιοι " +
+  "μου σου μας θα ειναι εχω εχει δεν μη αν η στο στη στην στα στον στισ στουσ ωσ πιο πολυ φορεσω διαλεξω κανω " +
+  "the a an and or of to in on for with my me i is are what which how should can do does best wear choose").split(" "));
+function terms(q){
+  return norm(q).split(/[^\p{L}\p{N}]+/u).filter(w => w.length > 1 && !STOP.has(w))
+    // ρίζα λέξης: «μαλλιά» βρίσκει και «μαλλιών»
+    .map(w => w.length >= 6 ? w.slice(0, -2) : w.length >= 4 ? w.slice(0, -1) : w);
+}
+function searchIn(data, q){
+  const ts = terms(q); if(!ts.length) return [];
+  const res = ts.map(w => new RegExp(`(^|[^\\p{L}\\p{N}])${w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`, "u"));
+  const scored = [];
+  for(const r of data){
+    const title = norm(r.title), body = norm(r.excerpt);
+    let score = 0, matched = 0;
+    for(const re of res){
+      const a = re.test(title), b = re.test(body);
+      if(a || b) matched++;
+      score += (a ? 3 : 0) + (b ? 1 : 0);
+    }
+    if(!matched) continue;
+    if(ts.length > 2 && matched < 2) continue;
+    const ageDays = (Date.now() - Date.parse(r.published)) / 864e5;
+    scored.push({ s: score * (matched / ts.length) ** 2 - ageDays * 0.02, r });
+  }
+  return scored.sort((a, b) => b.s - a.s).map(x => x.r);
+}
+
+function cardHTML(r){
+  const thumb = r.image ? `background-image:url('${esc(r.image)}')` : `background:${CAT_GRAD[r.category]||CAT_GRAD.fashion}`;
+  return `<button class="card" data-open="${esc(r.url)}">
+    <div class="thumb" style="${thumb}"></div>
+    <div class="ct"><span class="tag" style="background:${CAT_COLOR[r.category]}">${esc(t().cats[r.category])}</span>
+      <h5>${esc(r.title)}</h5>${r.excerpt ? `<p>${esc(r.excerpt)}</p>` : ""}<small>${esc(r.source)} · ${ago(r.published)}</small></div>
+  </button>`;
+}
+
+async function doSearch(q){
+  q = q.trim(); if(!q) return renderHello();
+  $("q").value = q; $("q").blur();
+  S.recent = [q, ...S.recent.filter(x => x.toLowerCase() !== q.toLowerCase())].slice(0, 6); store.set("recent", S.recent);
+  $("results").innerHTML = `<div class="loading"><div class="spinner"></div></div>`;
+  let data;
+  try{ data = await loadSearchData(); }catch{ $("results").innerHTML = `<div class="none">${t().offline}</div>`; return; }
+  const all = searchIn(data, q);
+  const mine = S.articles === "all" ? all : all.filter(langOK);
+  const other = S.articles === "all" ? [] : all.filter(r => !langOK(r));
+  let html = "";
+  if(mine.length) html += `<div class="res-head">${t().found(mine.length)}</div>` + mine.slice(0, 25).map(cardHTML).join("");
+  if(other.length && mine.length < 8){
+    html += `<div class="res-head ${mine.length ? "sep" : ""}">${S.articles === "el" ? t().otherLang : t().otherLangEl}</div>` + other.slice(0, 10).map(cardHTML).join("");
+  }
+  $("results").innerHTML = html || `<div class="none">${t().none}</div>`;
+  $("results").scrollTop = 0;
+}
+$("searchForm").onsubmit = (e) => { e.preventDefault(); doSearch($("q").value); };
+$("q").addEventListener("input", () => { if(!$("q").value) renderHello(); });
+$("results").onclick = (e) => {
+  const q = e.target.closest("[data-q]"); if(q) return doSearch(q.dataset.q);
+  const o = e.target.closest("[data-open]"); if(o && o.dataset.open) openUrl(o.dataset.open);
+};
+
+/* ------------------------------------------------------------ */
+/* Δείγμα (όταν δεν έχει οριστεί dataBase στο config.json)       */
+/* ------------------------------------------------------------ */
+const DEMO = [
+  ["fashion","el","Harper's Bazaar Greece","Το μπορντό είναι το χρώμα του χειμώνα","Από τα παλτό μέχρι τις γόβες, το βαθύ κόκκινο του κρασιού κυριαρχεί. Δες πώς να το συνδυάσεις με γκρι, καμηλό και τζιν."],
+  ["beauty","el","Jenny.gr","Περιποίηση για ξηρό δέρμα τον χειμώνα","Το κρύο και η θέρμανση στεγνώνουν την επιδερμίδα. Τα βήματα που χρειάζεσαι για ενυδάτωση που κρατάει όλη μέρα."],
+  ["health","el","Shape.gr","Άσκηση στην εμμηνόπαυση: τι βοηθά περισσότερο","Η ενδυνάμωση και το περπάτημα προστατεύουν οστά και διάθεση. Ένα απλό εβδομαδιαίο πρόγραμμα για αρχή."],
+  ["products","el","Marie Claire Greece","Νέα σειρά κραγιόν με έλαια για τα χείλη","Η νέα κυκλοφορία συνδυάζει έντονο χρώμα με περιποίηση. Δοκιμάσαμε τις πιο όμορφες αποχρώσεις."],
+  ["fashion","el","Woman Idol","Τι να φορέσεις σε χειμωνιάτικο γάμο","Βελούδο, μακριά μανίκια και ζεστά χρώματα. Ιδέες για εμφανίσεις που είναι κομψές και ζεστές."],
+  ["fashion","en","Vogue","Burgundy is the colour of the winter","From coats to pumps, deep wine red dominates the runways. Here is how to wear it with grey, camel and denim."],
+  ["beauty","en","Allure","Glass skin without ten steps","Glowing skin needs layered hydration and sunscreen, not endless products. Three basics are enough."],
+  ["health","en","Women's Health","A 10-minute walk after meals","A short walk after eating helps steady blood sugar and digestion. It's the easiest habit of the day."],
+  ["fashion","en","Who What Wear","Colours that suit blonde hair","Soft pastels, camel and navy flatter blonde hair. Our editors share the shades they reach for most."],
+  ["products","en","Harper's Bazaar","The new fragrance launches of the season","From woody to floral, these are the new perfumes worth trying this winter."],
+];
+function demoDays(){ const out = []; for(let i = 0; i < 3; i++){ const d = new Date(); d.setDate(d.getDate()-i); out.push(d.toLocaleDateString("en-CA")); } return out; }
+function demoReels(i){
+  return DEMO.map(([category, lang, source, title, excerpt], k) => ({
+    id:`demo-${i}-${k}`, category, lang, source, title, excerpt, url:"", image:null,
+    published:new Date(Date.now() - (i*24 + k + 1) * 3600e3).toISOString(),
+  }));
+}
+function demoDay(day){
+  const days = demoDays(); const d = day || days[0]; const i = Math.max(0, days.indexOf(d));
+  return Promise.resolve({ day:d, reels:demoReels(i), prevDay:days[i+1] || null });
+}
+const demoAll = () => demoReels(0);
+
+/* ------------------------------------------------------------ */
+/* Έναρξη                                                        */
+/* ------------------------------------------------------------ */
+(async function init(){
+  applyTexts(); renderChips(); renderLayoutBtn();
+  await loadConfig();
+  await loadLatest();
+  setInterval(checkNew, 10 * 60 * 1000);
+  document.addEventListener("visibilitychange", () => { if(!document.hidden) checkNew(); });
+})();
+})();
+</script>
+</body>
+</html>

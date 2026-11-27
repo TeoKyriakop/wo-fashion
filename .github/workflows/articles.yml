@@ -1,0 +1,50 @@
+name: Update articles (WO)
+
+on:
+  schedule:
+    - cron: "7 * * * *"   # κάθε ώρα
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: articles
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Άνοιγμα του κλάδου gh-pages (ή δημιουργία του την πρώτη φορά)
+        run: |
+          git config user.name "wo-bot"
+          git config user.email "wo-bot@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin gh-pages; then
+            git fetch origin gh-pages
+            git worktree add -B gh-pages site origin/gh-pages
+          else
+            git worktree add --orphan -b gh-pages site
+          fi
+
+      - name: Λήψη νέων άρθρων
+        run: node WO/wo-app/fetcher/update.mjs site
+
+      - name: Δημοσίευση
+        working-directory: site
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Δεν υπάρχουν αλλαγές"
+          else
+            git commit -m "Άρθρα $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push origin gh-pages
+          fi
